@@ -84,17 +84,6 @@ const Nav = () => {
                 network="facebook"
                 style={{ height: 40, width: 40 }}
               />
-
-
-
-            
-
-
-
-
-
-
-
           </motion.div>
       </nav>
 

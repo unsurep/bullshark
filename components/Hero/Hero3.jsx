@@ -3,22 +3,39 @@
 
 import Image from "next/image";
 import { FaPersonWalkingDashedLineArrowRight } from "react-icons/fa6";
+import { BiSolidQuoteAltLeft } from "react-icons/bi";
+import { BiSolidQuoteAltRight } from "react-icons/bi";
 
-import React, { useRef, useState } from 'react';
+import React from 'react';
+// swiper import
+import { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
+import 'swiper/css/effect-flip';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { EffectFlip, Pagination, Navigation, Autoplay,  } from 'swiper/modules';
+
 
 
 
 const Hero3 = () => {
+
+  // swiper auto
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty('--progress', 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 2000)}s`;
+  };
+
+
+
   return (
     <div>
       {/* Section 3  Zero-Breach Protection*/}
@@ -313,42 +330,211 @@ const Hero3 = () => {
         </div>
         
         {/* Div B / Image div  */}
-        <div className="py-12 flex  items-center">
+        <div className="py-12 flex items-center">
           <div>
-            <Image src='/image/lock.png' width={500} height={500} className=""/>
+            <Image src='/image/lock.png' width={500} height={500} alt="image"/>
+          </div>
+
+          {/* Swiper */}
+          <div className='w-fit py-8 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] bg-blue-200/60 palncolor md:px-[3rem] flex flex-col  pt-5 rounded-xl ml-auto'>
+            <Swiper
+              spaceBetween={30}
+              centeredSlides={true}
+              autoplay={{
+              delay: 4000,
+              disableOnInteraction: false,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            onAutoplayTimeLeft={onAutoplayTimeLeft}
+            className="mySwiper ">
+
+            {/* 1 */}
+            <SwiperSlide className='px-4 '>
+              <p ><BiSolidQuoteAltLeft />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quasi eaque rem voluptatibus reprehenderit dolorum vero veniam cumque.<BiSolidQuoteAltRight /></p>
+
+              <div className='flex items-center gap-5 w-full pt-16'>
+                <div><Image src='/image/me.jpg' width={50} height={50} alt='image' className='rounded-full'/></div>
+                <ul>
+                  <li><b>Name:</b> Louis Umukoro</li>
+                  <li><b>Location:</b> Port Harcourt</li>
+                </ul>
+              </div>
+            </SwiperSlide>
+
+             {/* 2 */}
+             <SwiperSlide className='px-4'>
+              <p><BiSolidQuoteAltLeft />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quasi eaque rem voluptatibus reprehenderit dolorum vero veniam cumque.<BiSolidQuoteAltRight /></p>
+
+              <div className='flex items-center gap-5 w-full pt-16'>
+                <div><Image src='/image/me.jpg' width={50} height={50} alt='image' className='rounded-full'/></div>
+                <ul>
+                  <li><b>Name:</b> Louis Umukoro</li>
+                  <li><b>Location:</b> Port Harcourt</li>
+                </ul>
+              </div>
+            </SwiperSlide>
+
+
+
+
+             {/* 3 */}
+             <SwiperSlide className='px-4'>
+              <p><BiSolidQuoteAltLeft />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quasi eaque rem voluptatibus reprehenderit dolorum vero veniam cumque.<BiSolidQuoteAltRight /></p>
+
+              <div className='flex items-center gap-5 w-full pt-16'>
+                <div><Image src='/image/me.jpg' width={50} height={50} alt='image' className='rounded-full'/></div>
+                <ul>
+                  <li><b>Name:</b> Louis Umukoro</li>
+                  <li><b>Location:</b> Port Harcourt</li>
+                </ul>
+              </div>
+            </SwiperSlide>
+
+
+
+             {/* 4 */}
+             <SwiperSlide className='px-4'>
+              <p><BiSolidQuoteAltLeft />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quasi eaque rem voluptatibus reprehenderit dolorum vero veniam cumque.<BiSolidQuoteAltRight /></p>
+
+              <div className='flex items-center gap-5 w-full pt-16'>
+                <div><Image src='/image/me.jpg' width={50} height={50} alt='image' className='rounded-full'/></div>
+                <ul>
+                  <li><b>Name:</b> Louis Umukoro</li>
+                  <li><b>Location:</b> Port Harcourt</li>
+                </ul>
+              </div>
+            </SwiperSlide>
+
+
+             {/* 5 */}
+             <SwiperSlide className='px-4'>
+              <p><BiSolidQuoteAltLeft /> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores quasi eaque rem voluptatibus reprehenderit dolorum veniam cumque.<BiSolidQuoteAltRight /></p>
+
+              <div className='flex items-center gap-5 w-full pt-16'>
+                <div><Image src='/image/me.jpg' width={50} height={50} alt='image' className='rounded-full'/></div>
+                <ul>
+                  <li><b>Name:</b> Louis Umukoro</li>
+                  <li><b>Location:</b> Port Harcourt</li>
+                </ul>
+              </div>
+            </SwiperSlide>
+
+            {/* <SwiperSlide>Slide 6</SwiperSlide> */}
+           
+            <div className="autoplay-progress" slot="container-end">
+            <svg viewBox="0 0 48 48" ref={progressCircle}>
+            <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+            <span ref={progressContent}></span>
+            </div>
+            </Swiper>
+          </div>
+         
+        </div>
+      </section>
+
+      {/* Section 7 compaines logo we have worked with */}
+      <section className="flex items-center justify-between md:px-[4rem]">
+        <Image src='/image/w1.jpg' width={100} height={100} alt="images"/>
+        <Image src='/image/w2.jpg' width={100} height={100} alt="images"/>
+        <Image src='/image/w3.jpg' width={100} height={100} alt="images"/>
+        <Image src='/image/w1.jpg' width={100} height={100} alt="images"/>
+        <Image src='/image/w2.jpg' width={100} height={100} alt="images"/>
+        <Image src='/image/w3.jpg' width={100} height={100} alt="images"/>
+
+      </section>
+      
+
+      {/* Section 8 Frequently asked Questions */}
+      <section >
+      <div className="flex flex-col items-center justify-center space-y-6 pt-16">
+          <h3 className="text-red-500 uppercase font-semibold font-montserrat flex items-center gap-1">
+            <span className="text-blue-500 ">
+              <FaPersonWalkingDashedLineArrowRight />
+            </span>
+            Questions and Answers
+          </h3>
+
+          <h1 className="text-4xl font-bold tracking-wide font-montserrat">
+            Frequently Asked Questions
+          </h1>
+
+          <div className="text-3xl text-red-500">......</div>
+        </div>
+
+        
+
+        {/* FAQ Div*/}
+        <div className="flex items-center md:px-[4rem] py-8">    
+          <div className="flex flex-col gap-1">
+          {/* FAQ 1 */}
+          <div className="collapse collapse-plus bg-blue-300/20 border border-base-300">
+            <input type="radio" name="my-accordion-3" defaultChecked />
+            <div className="collapse-title font-semibold text-red-500 text-base">Is Bull<span className="text-blue-500">Shark</span> Reliable?</div>
+            <div className="collapse-content text-base"><span className='text-red-500 font-bold font-montserrat'>Bull</span><span className='text-blue-500 font-bold font-montserrat'>Shark</span> is a team of highly trained security professionals <br /> dedicated to ensuring safety and peace of mind. Each of our <br /> guards undergoes a rigorous training program before <br /> deployment, ensuring top-tier readiness and reliability.We <br /> offer a wide range of security services from Corporate security, <br /> Mobile patrols, Event security, Personal bodyguard services <br /> and more all tailored to your needs. With <span className='text-red-500 font-bold font-montserrat'>Bull</span><span className='text-blue-500 font-bold font-montserrat'>Shark</span>, your <br /> security is our priority.</div>
+          </div>
+
+            {/* FAQ 2 */}
+          <div className="collapse collapse-plus bg-blue-300/20 border border-base-300">
+            <input type="radio" name="my-accordion-3" />
+            <div className="collapse-title font-semibold text-red-500 text-base">Which industry can hire security services?</div>
+            <div className="collapse-content text-base">Our security solutions are trusted and utilized across a wide <br /> range of industries. From airports and hospitals to banks, <br /> residential communities, museums, retail stores, commercial <br /> complexes, and warehouses. We provide reliable protection <br /> wherever it's needed most.</div>
+          </div>
+          
+          {/* FAQ 3 */}
+          <div className="collapse collapse-plus bg-blue-300/20 border border-base-300">
+            <input type="radio" name="my-accordion-3" />
+            <div className="collapse-title font-semibold text-red-500 text-base">Will Security Guards come armed?</div>
+            <div className="collapse-content text-base">Our security guards are equipped with latest technology, <br /> enabling them to monitor, report and respond to suspicious <br /> activity with maximum efficiency and precision.</div>
           </div>
 
 
+           {/* FAQ 4 */}
+           <div className="collapse collapse-plus bg-blue-300/20 border border-base-300">
+            <input type="radio" name="my-accordion-3" />
+            <div className="collapse-title font-semibold text-red-500 text-base">Do the security guards maintain daily reports?</div>
+            <div className="collapse-content text-base">Based on management requirements, our security <br /> guards deliver detailed daily reports for each shift. <br /> These reports cover incidents such as criminal <br /> activity, accidents, property damage or loss, injuries <br /> and any other notable occurrences.</div>
+          </div>
+        </div>
 
-          {/* Swiper */}
-          <div className="">
-            {/* <Swiper
-        spaceBetween={10}
-        centeredSlides={true}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
-            </Swiper> */}
+
+        {/* Image */}
+          <div className="mx-auto">
+            <Image src='/image/logobg.png' width={500} height={500} alt="image"/>
           </div>
         </div>
       </section>
+
+      {/* API Call for New update */}
+      <section className="md:px-[4rem]">
+        <h1 className="text-center text-red-500 font-semibold uppercase text-xl flex items-center gap-2 justify-center">Security News Update 
+          <Image src='/image/news.svg' width={50} height={50} alt="image"/>
+        </h1>
+        
+        {/* API Call */}
+        <div className="py-8">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+        </div>
+
+      </section>
+
+
 
 
 

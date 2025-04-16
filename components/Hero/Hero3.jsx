@@ -1,5 +1,6 @@
 'use client'
-
+import { useEffect } from "react";
+import axios from "axios";
 
 import Image from "next/image";
 import { FaPersonWalkingDashedLineArrowRight } from "react-icons/fa6";
@@ -25,6 +26,25 @@ import { EffectFlip, Pagination, Navigation, Autoplay,  } from 'swiper/modules';
 
 
 const Hero3 = () => {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState (null);
+
+  useEffect(() =>{
+    async function fetchLiveData() {
+      try {
+        const response = await axios.get('/api/live');
+        setData(response.data);
+      } 
+      catch (error) {
+        console.error('Error fetching data', error);
+        setError('Error loading live data.');
+      }
+    }
+    fetchLiveData();
+  },[]);
+
+
+
 
   // swiper auto
   const progressCircle = useRef(null);
@@ -448,7 +468,7 @@ const Hero3 = () => {
 
       {/* Section 8 Frequently asked Questions */}
       <section >
-      <div className="flex flex-col items-center justify-center space-y-6 pt-16">
+        <div className="flex flex-col items-center justify-center space-y-6 pt-16">
           <h3 className="text-red-500 uppercase font-semibold font-montserrat flex items-center gap-1">
             <span className="text-blue-500 ">
               <FaPersonWalkingDashedLineArrowRight />
@@ -506,7 +526,7 @@ const Hero3 = () => {
         </div>
       </section>
 
-      {/* API Call for New update */}
+      {/*Section 9 API Call for New update */}
       <section className="md:px-[4rem]">
         <h1 className="text-center text-red-500 font-semibold uppercase text-xl flex items-center gap-2 justify-center">Security News Update 
           <Image src='/image/news.svg' width={50} height={50} alt="image"/>
@@ -514,6 +534,50 @@ const Hero3 = () => {
         
         {/* API Call */}
         <div className="py-8">
+            <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+              {/* Error message */}
+              {error && <p className='text-red-500'>{error}</p>}
+
+              {
+                data ?
+                  (data.articles && data.articles.length > 0 ?
+                    (data.articles.map((article, index) => (
+                      <div key={index} className="p-4 bg-white shadow-lg rounded-lg hover:bg-gray-200 transition duration-300 ease-in-out">
+                        {article.urlToImage && ( 
+                          <img 
+                            src={article.urlToImage}
+                            alt={article.title}
+                            className="w-full h-48 sm:h-64 object-cover rounded mb-4"
+                          />)
+                        }
+
+                        <h2 className="text-base font-semibold">{article.title}</h2>
+
+                        {/* Date added below */}
+                          { article.publishedAt && (<p className="text-xs md:text-sm text-gray-500 mb-2">Published on:{new Date (article.publishedAt).toLocaleDateString()}</p>)
+                        }
+
+                        <p className=" mt-4 text-sm md:text-base text-gray-700">{article.description}</p>
+
+                        <a href={article.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-4 inline-flex items-center gap-1 px-4 py-2 rounded bg-cyan-600/30 hover:bg-cyan-400/90 text-gray-700 hover:text-black transition-opacity duration-300 text-sm md:text-base"
+                          >
+                          Read more
+                        </a>
+
+                      </div>))) : (<p className="text-center text-gray-600">No live articles found.</p> )) :
+
+                      // Loader
+                      <div className="w-full flex items-center justify-center">
+                        <Image src='/image/spinner/gif' width={100} height={100} alt="loader" className=""/>
+                      </div>
+              }
+
+            </main>
+            
           
 
 
@@ -534,9 +598,41 @@ const Hero3 = () => {
 
       </section>
 
+      {/* Section 10 Contact Me */}
+      <section>
+        <div className="flex flex-col items-center justify-center space-y-6 pt-16">
+          <h3 className="text-red-500 uppercase font-semibold font-montserrat flex items-center gap-1">
+            <span className="text-blue-500 ">
+              <FaPersonWalkingDashedLineArrowRight />
+            </span>
+            Ask Us Anything
+          </h3>
+
+          <h1 className="text-4xl font-bold tracking-wide font-montserrat">
+            Contact Us
+          </h1>
+
+          <div className="text-3xl text-red-500">......</div>
+        </div>
+
+        {/* The Contact Form */}
+        <div className="flex justify-between md:px-[4rem]">
+
+          <div>Video</div>
+
+          <div>Form</div>
+          
+        </div>
 
 
 
+
+
+
+
+
+
+      </section>
 
     </div>
   );

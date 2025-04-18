@@ -379,7 +379,7 @@ const Hero3 = () => {
         </div>
         
         {/* Div B / Image div  */}
-        <div className="py-12 grid grid-cols-1 lg:flex items-center">
+        <div className="py-12 grid grid-cols-1 lg:flex gap-5 lg:gap-0 justify-center items-center w-full">
           <motion.div
             animate={{
               y: [0, -10, 0],
@@ -389,13 +389,14 @@ const Hero3 = () => {
             duration: 2,
             repeat: Infinity,
             ease: 'easeInOut'
-           }}>
+           }}
+           className="w-full flex items-center justify-center mx-auto">
 
             <Image src='/image/lock.png' width={500} height={500} alt="image"/>
           </motion.div>
 
           {/* Swiper */}
-          <div className='w-fit py-8 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] bg-blue-200/60 palncolor md:px-[3rem] flex flex-col  pt-5 rounded-xl ml-auto'>
+          <div className='w-fit  py-8 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] bg-blue-200/60 palncolor md:px-[3rem] flex flex-col mx-auto  pt-10 rounded-xl lg:ml-auto'>
             <Swiper
               spaceBetween={30}
               centeredSlides={true}

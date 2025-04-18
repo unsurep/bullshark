@@ -34,12 +34,12 @@ const Hero1 = () => {
 
 
 
-  const [background, setBackground] = useState ('/image/s2.png')
+  const [background, setBackground] = useState ('/image/bs1.svg')
  
 
   useEffect (() =>{
     const timeout = setTimeout(() =>{
-      setBackground('/image/111.jpg');
+      setBackground('/image/1s.svg');
     }, 10000);
 
     return () => clearTimeout(timeout)
@@ -51,10 +51,10 @@ const Hero1 = () => {
 
   return (
     <>
-      <section className='h-screen bg-no-repeat bg-cover bg-center px-[1rem] md:px-[4rem] relative' style={{backgroundImage: `url(${background})`}}>
+      <section className='h-screen bg-no-repeat bg-cover font-montserrat bg-center px-[1rem] md:px-[4rem] relative' style={{backgroundImage: `url(${background})`}}>
 
        {/* Overlay to make text readable */}
-       <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
+       <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
 
 
         {/* write up for image 2.avif */}

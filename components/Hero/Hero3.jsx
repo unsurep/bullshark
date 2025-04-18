@@ -79,7 +79,7 @@ const Hero3 = () => {
   return (
     <div>
       {/* Section 3  Zero-Breach Protection*/}
-      <section className="md:px-[4rem] py-24">
+      <section className="md:px-[4rem] px-[1rem] py-24 font-roboto ">
         <div className="flex flex-col items-center justify-center space-y-6">
           <h3 className="text-red-500 uppercase font-semibold font-montserrat flex items-center gap-1">
             <span className="text-blue-500 ">
@@ -88,22 +88,19 @@ const Hero3 = () => {
             Zero-Breach Protection
           </h3>
 
-          <h1 className="text-4xl font-bold tracking-wide font-montserrat">
+          <h1 className="text-4xl font-bold tracking-wide font-montserrat text-center md:text-start">
             Get Client-oriented Security Solutions
           </h1>
 
           <div className="text-3xl text-red-500">......</div>
 
-          <p className="text-center text-xl tracking-wid font-roboto">
-            We are diligent to deliver the utmost security to our clients for
-            everyday operations, <br /> ensuring that they feel safe while
-            operating their businesses. Explore our range of <br /> security
-            services to protect valuable assets.
+          <p className=" text-xl tracking-wide font-roboto">
+            We are diligent to deliver the utmost security to our clients for everyday operations,  ensuring that they feel safe while operating their businesses. Explore our range of  security services to protect valuable assets.
           </p>
         </div>
 
         {/* Four Divs */}
-        <div className="flex items-center justify-between pt-16 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:flex items-center justify-between pt-16 gap-8">
           {/* A */}
           <div className="flex flex-col items-center text-center shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] py-12 px-6 hover:bg-gray-200 transition-all duration-500 ease-initial">
             <div>
@@ -175,9 +172,9 @@ const Hero3 = () => {
       </section>
 
       {/* Section 4 Our Services*/}
-      <section className="bg-gray-300/20 md:px-[4rem]">
+      <section className="bg-gray-300/20 md:px-[4rem] px-[1rem} font-roboto">
         {/* A */}
-        <div className="space-y-6 flex flex-col items-center text-center pt-16">
+        <div className="space-y-6 flex flex-col items-center text-center pt-16 ">
           <h3 className="text-red-500 uppercase font-semibold font-montserrat flex items-center gap-1">
             <span className="text-blue-500 ">
               <FaPersonWalkingDashedLineArrowRight />
@@ -189,12 +186,12 @@ const Hero3 = () => {
         </div>
 
         {/* B 3*/}
-        <div className="flex items-center justify-center gap-8 pt-8">
+        <div className="grid grid-cols-1 md:flex items-center justify-center gap-8 pt-8 px-[1rem]">
 
           {/* Uniformed Security Guards */}
           <div className=" ring rounded ring-gray-600">
-            <p >
-              <Image src='/image/bs3.svg' width={300} height={300} alt="image" className="rounded"/>
+            <p className="">
+              <Image src='/image/bs3.svg' width={300} height={300} alt="image" className="rounded w-full"/>
             </p>
             <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Uniformed Security Guards</p>
           </div>
@@ -202,7 +199,7 @@ const Hero3 = () => {
           {/* Escort Services */}
           <div className=" ring rounded ring-gray-600">
             <p>
-              <Image src='/image/escort.svg' width={300} height={300} alt="image"/>
+              <Image src='/image/escort.svg' width={300} height={300} alt="image" className="rounded w-full"/>
             </p>
             <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Escort Services</p>
           </div>
@@ -210,7 +207,7 @@ const Hero3 = () => {
           {/* Bulletproof SUV */}
           <div className=" ring rounded ring-gray-600">
             <p>
-              <Image src='/image/suv.svg' width={300} height={300} alt="image"/>
+              <Image src='/image/suv.svg' width={300} height={300} alt="image" className="rounded w-full"/>
             </p>
             <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Bulletproof SUV</p>
           </div>
@@ -218,12 +215,12 @@ const Hero3 = () => {
 
         
         {/* C 3 */}
-        <div className="flex items-center justify-center gap-8 py-8">
+        <div className="grid grid-cols-1 md:flex items-center justify-center gap-8 py-8 px-[1rem]">
 
           {/* Hilux and Buses */}
           <div className=" ring rounded ring-gray-600">
             <p>
-              <Image src='/image/notfbg.svg' width={300} height={300} alt="image"/>
+              <Image src='/image/notfbg.svg' width={300} height={300} alt="image" className="rounded w-full"/>
             </p>
             <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Hilux and Buses</p>
           </div>
@@ -231,15 +228,15 @@ const Hero3 = () => {
           {/* Bouncers */}
           <div className=" ring rounded ring-gray-600">
             <p>
-              <Image src='/image/bouncers.svg' width={300} height={300} alt="image"/>
+              <Image src='/image/bouncers.svg' width={300} height={300} alt="image" className="rounded w-full"/>
             </p>
             <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Bouncers </p>
           </div>
 
           {/* Due Diligence */}
           <div className=" ring rounded ring-gray-600">
-            <p>
-              <Image src='/image/dd.svg' width={300} height={300} alt="image"/>
+            <p className="">
+              <Image src='/image/dd.svg' width={300} height={300} alt="image" className="rounded w-full"/>
             </p>
             <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Due Diligence</p>
           </div>
@@ -251,8 +248,8 @@ const Hero3 = () => {
       </section>
 
       {/* Section 5 Industries */}
-      <h1 className="text-center text-4xl font-black pt-12">Industries</h1>
-      <section className="flex items-center justify-between px-[2rem] py-6 pb-16">
+      <h1 className="text-center text-4xl font-black pt-12 font-montserrat tracking-wide">Industries</h1>
+      <section className="grid grid-cols-1 md:grid-cols-2 w-fit mx-auto gap-3 lg:flex items-center justify-between px-[2rem] py-6 pb-16">
         
 
         {/* Marinetime securities */}
@@ -260,7 +257,7 @@ const Hero3 = () => {
           <div>
             <Image src='/image/ship.svg' width={100} height={100} alt="image"/>
           </div>
-          <div className=" text-center">
+          <div className=" text-center font-roboto">
             <p>Marinetime</p>
             <p className="pb-3">Security</p>
             {/* Open the modal using document.getElementById('ID').showModal() method */}
@@ -287,14 +284,14 @@ const Hero3 = () => {
           <div>
             <Image src='/image/industry.svg' width={100} height={100} alt="image"/>
           </div>
-          <div className=" text-center">
+          <div className=" text-center font-roboto">
             <p>Industry &</p>
             <p className="pb-3">Manufacturing</p>
 
             {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <button className="btn" onClick={()=>document.getElementById('my_modal_5').showModal()}>Read More</button>
+            <button className="btn font-roboto" onClick={()=>document.getElementById('my_modal_5').showModal()}>Read More</button>
             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-              <div className="modal-box">
+              <div className="modal-box font-roboto">
                 <h3 className="font-bold text-lg">Hello!</h3>
                 <p className="py-4">Press ESC key or click the button below to close</p>
               <div className="modal-action">
@@ -314,14 +311,14 @@ const Hero3 = () => {
           <div>
             <Image src='/image/airplane.svg' width={100} height={100} alt="image"/>
           </div>
-          <div className=" text-center">
+          <div className=" text-center font-roboto">
             <p>Aviation</p>
             <p className="pb-3">Security</p>
 
             {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <button className="btn" onClick={()=>document.getElementById('my_modal_5').showModal()}>Read More</button>
+            <button className="btn font-roboto" onClick={()=>document.getElementById('my_modal_5').showModal()}>Read More</button>
             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-              <div className="modal-box">
+              <div className="modal-box font-roboto">
                 <h3 className="font-bold text-lg">Hello!</h3>
                 <p className="py-4">Press ESC key or click the button below to close</p>
               <div className="modal-action">
@@ -340,14 +337,14 @@ const Hero3 = () => {
           <div>
             <Image src='/image/office.svg' width={100} height={100} alt="image"/>
           </div>
-          <div className=" text-center">
+          <div className=" text-center font-roboto">
             <p>Offices & </p>
             <p className="pb-3">Infrastructure</p>
 
             {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <button className="btn" onClick={()=>document.getElementById('my_modal_5').showModal()}>Read More</button>
+            <button className="btn font-roboto" onClick={()=>document.getElementById('my_modal_5').showModal()}>Read More</button>
             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-              <div className="modal-box">
+              <div className="modal-box font-roboto">
                 <h3 className="font-bold text-lg">Hello!</h3>
                 <p className="py-4">Press ESC key or click the button below to close</p>
               <div className="modal-action">
@@ -363,18 +360,18 @@ const Hero3 = () => {
 
       </section>
 
-      {/*Section 6 Our Customers we work with */}
-      <section className="bg-gray-300/20 md:px-[4rem]">
+      {/*Section 6 TESTIMONY | Our Customers we work with */}
+      <section className="bg-gray-300/20 md:px-[4rem] font-roboto">
       {/* Div A */}
         <div className="flex flex-col items-center justify-center space-y-6 pt-16">
-          <h3 className="text-red-500 uppercase font-semibold font-montserrat flex items-center gap-1">
-            <span className="text-blue-500 ">
+          <h3 className="text-red-500 uppercase font-semibold font-montserrat  flex items-center gap-1">
+            <span className="text-blue-500 font-montserrat ">
               <FaPersonWalkingDashedLineArrowRight />
             </span>
             TESTIMONY FROM OUR CLIENTS
           </h3>
 
-          <h1 className="text-4xl font-bold tracking-wide font-montserrat">
+          <h1 className="text-4xl text-center font-bold tracking-wide font-montserrat">
             People We Have Worked With
           </h1>
 
@@ -382,7 +379,7 @@ const Hero3 = () => {
         </div>
         
         {/* Div B / Image div  */}
-        <div className="py-12 flex items-center">
+        <div className="py-12 grid grid-cols-1 lg:flex items-center">
           <motion.div
             animate={{
               y: [0, -10, 0],

@@ -23,7 +23,7 @@ const Nav = () => {
     <div className='z-50 fixed w-full'>
       {/* top nav for desktop */}
       <nav className='lg:flex justify-end items-center hidden bg-gray-400 px-[4rem]'>
-          <div className='flex items-center text-gray-800 gap-2 font-bold'><FaPhoneVolume className='animate-pulse' /> 0809-872-7936 | 091-815-5494</div>
+          <div className='flex items-center font-montserrat text-gray-800 gap-2 font-bold'><FaPhoneVolume className='animate-pulse' /> 0809-872-7936 | 091-815-5494</div>
       </nav>
      
       
@@ -117,7 +117,7 @@ const Nav = () => {
 
       {/* top nav for phone screen */}
       <nav className='flex justify-center items-center lg:hidden bg-gray-400 px-[1rem]'>
-        <div className='flex items-center gap-2 text-gray-800 font-extrabold'><FaPhoneVolume className='animate-pulse' /> 0809-872-7936 | 091-815-5494</div>
+        <div className='flex items-center gap-2 text-gray-800 font-montserrat font-extrabold'><FaPhoneVolume className='animate-pulse' /> 0809-872-7936 | 091-815-5494</div>
       </nav>
 
       {/* phone nav */}
@@ -135,7 +135,7 @@ const Nav = () => {
             <ul 
              
 
-              className='absolute scale-in-hor-right top-[5.5rem] font-semibold right-[0rem]  w-[60vw] h-screen bg-white flex flex-col gap-10 text-xl'>
+              className='absolute scale-in-hor-right top-[5.5rem] font-semibold right-[0rem]  w-[60vw] h-screen bg-white flex flex-col gap-10 text-xl font-montserrat'>
               <li className='md:pt-8 z-50'></li>
 
               <Link href={'/'}>

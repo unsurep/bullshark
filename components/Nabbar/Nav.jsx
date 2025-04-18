@@ -6,6 +6,7 @@ import { SiWhatsapp } from "react-icons/si";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { motion } from 'motion/react'
 import { SocialIcon } from 'react-social-icons'
+import Link from 'next/link';
 
 
 
@@ -22,15 +23,16 @@ const Nav = () => {
     <div className='z-50 fixed w-full'>
       {/* top nav for desktop */}
       <nav className='lg:flex justify-end items-center hidden bg-gray-400 px-[4rem]'>
-          <div className='flex items-center gap-2 font-bold'><FaPhoneVolume className='animate-pulse' /> 08098727936 | 0918155494</div>
+          <div className='flex items-center text-gray-800 gap-2 font-bold'><FaPhoneVolume className='animate-pulse' /> 0809-872-7936 | 091-815-5494</div>
       </nav>
      
       
       {/* Desktop nav */}
       <nav className='lg:flex items-center justify-between px-[2rem] md:px-[4rem] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]  w-full py-1  backdrop-blur-xl bg-white/45 fixed z-50 hidden'>
-          <div>
+
+          <Link href={'/'}>
             <Image src='/image/logobgr.png' width={80} height={80} alt='logo'  />
-          </div>
+          </Link>
 
           <motion.ul 
             initial={{ x:500, opacity:0, scale:0.5}}
@@ -38,12 +40,29 @@ const Nav = () => {
             transition={{ duration:0.9}}
             
             className='flex items-center gap-8 text-blue-800 font-medium  font-montserrat'>
-            <li className='hvr-underline-from-center cursor-pointer'>Home</li>
-            <li className='hvr-underline-from-center cursor-pointer'>About Us</li>
-            <li className='hvr-underline-from-center cursor-pointer'>Services</li>
+
+            <Link href={'/'}>
+              <li className='hvr-underline-from-center cursor-pointer'>Home</li>
+            </Link>
+
+            <Link href={'/about'}>
+              <li className='hvr-underline-from-center cursor-pointer'>About Us</li>
+            </Link>
+
+            <Link href={'/serv'}>
+              <li className='hvr-underline-from-center cursor-pointer'>Our Services</li>
+            </Link>
+
             {/* <li className='hvr-underline-from-center cursor-pointer'>Testimonials</li> */}
-            <li className='hvr-underline-from-center cursor-pointer'>Certificates</li>
-            <li className='hvr-underline-from-center cursor-pointer'>Contact</li>
+
+            <Link href={'/certificate'}>
+              <li className='hvr-underline-from-center cursor-pointer'>Certificates</li>
+            </Link>
+
+            <Link href={'/contact'}>
+              <li className='hvr-underline-from-center cursor-pointer'>Contact Us</li>
+            </Link>
+
           </motion.ul>
 
           <motion.div 
@@ -59,7 +78,7 @@ const Nav = () => {
               <span className='text-green-500 text-xl '><SiWhatsapp className=' font-bold' /></span> </button> */}
 
               <SocialIcon
-                url="https://linkedin.com/"
+                url="https://www.linkedin.com/in/stanley-nsofor-css-fniis-7b356024?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGIfmOxCyTh6qND28K%2BySDA%3D%3D"
                 target="_blank"
                 fgColor="gray"
                 bgColor="transparent"
@@ -77,11 +96,20 @@ const Nav = () => {
               />
 
               <SocialIcon
-                url="https://facebook.com/"
+                url="https://web.facebook.com/stanley.nsofor.5"
                 target="_blank"
                 fgColor="gray"
                 bgColor="transparent"
                 network="facebook"
+                style={{ height: 40, width: 40 }}
+              />
+
+              <SocialIcon
+                url="https://www.youtube.com/@bullsharksecurityltd1681"
+                target="_blank"
+                fgColor="gray"
+                bgColor="transparent"
+                network="youtube"
                 style={{ height: 40, width: 40 }}
               />
           </motion.div>
@@ -89,14 +117,15 @@ const Nav = () => {
 
       {/* top nav for phone screen */}
       <nav className='flex justify-center items-center lg:hidden bg-gray-400 px-[1rem]'>
-        <div className='flex items-center gap-2 font-extrabold'><FaPhoneVolume className='animate-pulse' /> 08098727936 | 0918155494</div>
+        <div className='flex items-center gap-2 text-gray-800 font-extrabold'><FaPhoneVolume className='animate-pulse' /> 0809-872-7936 | 091-815-5494</div>
       </nav>
 
       {/* phone nav */}
       <nav className='flex items-center justify-between px-[1rem] shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]  w-full py-1  backdrop-blur-xl bg-white/45 relative '>
-        <div>
+
+        <Link href={'/'}>
           <Image src='/image/logobgr.png' width={80} height={80} alt='logo'  />
-        </div>
+        </Link>
 
         <div onClick={toggleShowMenu}>
           <Image src='/image/menu.svg' width={55} height={55} alt='logo'  />
@@ -106,20 +135,48 @@ const Nav = () => {
             <ul 
              
 
-              className='absolute scale-in-hor-right top-[5.5rem] font-semibold right-[0rem]  w-[60vw] h-screen bg-gray-500 flex flex-col gap-10 text-xl'>
-              <li className='md:pt-8'></li>
+              className='absolute scale-in-hor-right top-[5.5rem] font-semibold right-[0rem]  w-[60vw] h-screen bg-white flex flex-col gap-10 text-xl'>
+              <li className='md:pt-8 z-50'></li>
 
-              <motion.li 
-                
-                className='flex items-center justify-center'>Home</motion.li>
+              <Link href={'/'}>
+                <motion.li 
+                  whileHover={{ scale:1.1}}
+                  whileTap={{ scale:0.9, color:'red'}}
+                  className='flex items-center justify-center'>Home
+                </motion.li>
+              </Link>
 
-              <li className='flex items-center justify-center'>About Us</li>
+              <Link href={'/about'}>
+                <motion.li 
+                  whileHover={{ scale:1.1}}
+                  whileTap={{ scale:0.9, color:'red'}}
+                  className='flex items-center justify-center'>About Us
+                </motion.li>
+              </Link>
 
-              <li className='flex items-center justify-center'>Services</li>
+              <Link href={'serv'}>
+                <motion.li 
+                  whileHover={{ scale:1.1}}
+                  whileTap={{ scale:0.9, color:'red'}}
+                  className='flex items-center justify-center'>Services
+                </motion.li>
+              </Link>
 
-              <li className='flex items-center justify-center'>Certificate</li>
+              <Link href={'/certificate'}>
+                <motion.li 
+                  whileHover={{ scale:1.1}}
+                  whileTap={{ scale:0.9, color:'red'}}
+                  className='flex items-center justify-center'>Certificate
+                </motion.li>
+              </Link>
 
-              <li className='flex items-center justify-center'>Contact Us</li>
+              <Link href={'/contact'}>
+                <motion.li 
+                  whileHover={{ scale:1.1}}
+                  whileTap={{ scale:0.9, color:'red'}}
+                  className='flex items-center justify-center'>Contact Us
+                </motion.li>
+              </Link>
 
               
             </ul>

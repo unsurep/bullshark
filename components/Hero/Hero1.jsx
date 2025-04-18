@@ -12,8 +12,8 @@ const Hero1 = () => {
   // react simple typewriter
   const [text] = useTypewriter({
     words: ['Partners', 'Experts', 'Solutions', 'Specialists!'],
-    loop: 3,
-    onLoopDone: () => console.log(`loop completed after 3 runs.`)
+    loop: 2,
+    onLoopDone: () => console.log(`loop completed after 2 runs.`)
   })
 
 
@@ -28,19 +28,18 @@ const Hero1 = () => {
       once: false,
       anchorPlacement: 'top-bottom',
     });
-    }, []);
+  }, []);
 
 
 
 
 
   const [background, setBackground] = useState ('/image/s2.png')
-  // const [write, setWrite] = useState ("Uniformed Security Guards | Escort Services| Bulletproof SUV | Hilux & Buses | Bouncers ")
+ 
 
   useEffect (() =>{
     const timeout = setTimeout(() =>{
       setBackground('/image/111.jpg');
-      // setWrite('Trained. Trusted. Tested. | Your Safety, Our Priority | Vigilance Redefined | We Protect You ')
     }, 10000);
 
     return () => clearTimeout(timeout)
@@ -77,6 +76,7 @@ const Hero1 = () => {
 
             <div className='relative items-center flex  justify-center pt-8 lg:pt-10'>
               <motion.button 
+                onClick={() => window.open("https://wa.me/2348098727936", "_blank")}
                 whileTap={{ scale:0.9 }}
                 className='bg-black text-white font-bold p-4 hvr-float-shadow hover:bg-white hover:text-black cursor-pointer rounded-md hover:rounded-md font-montserrat'>Get in touch</motion.button>
             </div>

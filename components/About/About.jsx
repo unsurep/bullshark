@@ -2,9 +2,8 @@ import React from "react";
 
 const About =()=>{
     return(
-        <div>About page
-            hahahahahahahahahhaa
-            masterrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
+        <div className="pt-32">
+            About page
         </div>
     )
 

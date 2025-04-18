@@ -53,7 +53,7 @@ const Footer =()=>{
                         <h1 className='font-bold text-xl'>Contact Us</h1>
                         <ul className="pt-6 space-y-3">
                             <li className="flex items-center gap-2"><FaPhoneAlt />0809-872-7936 | 091-815-5494</li>
-                            <li className="flex items-center gap-2"><IoMdMail />email</li>
+                            <li className="flex items-center gap-2"><IoMdMail />bullsharkltd@gmail.com</li>
                             <li className="flex items-center gap-2"><FaMapMarkerAlt />location</li>
                         </ul>
                     </div>

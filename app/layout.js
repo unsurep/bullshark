@@ -1,6 +1,7 @@
 import { Montserrat, Roboto } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nabbar/Nav";
+import Footer from "@/components/Footer/Footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
       >
         <Nav/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

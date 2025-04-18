@@ -1,6 +1,10 @@
 'use client'
 import { useEffect } from "react";
 import axios from "axios";
+import { motion} from 'motion/react'
+
+
+
 
 import Image from "next/image";
 import { FaPersonWalkingDashedLineArrowRight } from "react-icons/fa6";
@@ -22,10 +26,26 @@ import 'swiper/css/navigation';
 // import required modules
 import { EffectFlip, Pagination, Navigation, Autoplay,  } from 'swiper/modules';
 
+import YouTube from 'react-youtube';
+
 
 
 
 const Hero3 = () => {
+
+  // youtube player
+  const opts = {
+    playerVars: {
+      autoplay: 1,  // Autoplay enabled
+      modestbranding: 1, // Hides YouTube logo
+      rel: 0, // Prevents showing related videos
+      vq: "hd1080", // Forces HD playback
+      
+    },
+  }
+
+
+
   const [data, setData] = useState(null);
   const [error, setError] = useState (null);
 
@@ -85,7 +105,7 @@ const Hero3 = () => {
         {/* Four Divs */}
         <div className="flex items-center justify-between pt-16 gap-8">
           {/* A */}
-          <div className="flex flex-col items-center text-center shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] py-12 px-6 ">
+          <div className="flex flex-col items-center text-center shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] py-12 px-6 hover:bg-gray-200 transition-all duration-500 ease-initial">
             <div>
               <Image src="/image/a.png" width={60} height={60} alt="image" />
             </div>
@@ -101,7 +121,7 @@ const Hero3 = () => {
           </div>
 
           {/* B */}
-          <div className="flex flex-col items-center text-center shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] py-12 px-6">
+          <div className="flex flex-col items-center text-center shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] py-12 px-6 hover:bg-gray-200 transition-all duration-500 ease-initial">
             <div>
               <Image src="/image/b.png" width={60} height={60} alt="image" />
             </div>
@@ -117,7 +137,7 @@ const Hero3 = () => {
           </div>
 
           {/* C */}
-          <div className="flex flex-col items-center text-center shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] py-12 px-6">
+          <div className="flex flex-col items-center text-center shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] py-12 px-6 hover:bg-gray-200 transition-all duration-500 ease-initial">
             <div>
               <Image src="/image/c.png" width={60} height={60} alt="image" />
             </div>
@@ -136,7 +156,7 @@ const Hero3 = () => {
           </div>
 
           {/* D */}
-          <div className="flex flex-col items-center text-center shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] py-12 px-6">
+          <div className="flex flex-col items-center text-center shadow-[0px_10px_1px_rgba(221,_221,_221,_1),_0_10px_20px_rgba(204,_204,_204,_1)] py-12 px-6 hover:bg-gray-200 transition-all duration-500 ease-initial">
             <div>
               <Image src="/image/d.png" width={60} height={60} alt="image" />
             </div>
@@ -171,50 +191,62 @@ const Hero3 = () => {
         {/* B 3*/}
         <div className="flex items-center justify-center gap-8 pt-8">
 
-          <div >
-            <p>
-              <Image src='/image/1s.jpg' width={300} height={300} alt="image"/>
+          {/* Uniformed Security Guards */}
+          <div className=" ring rounded ring-gray-600">
+            <p >
+              <Image src='/image/bs3.svg' width={300} height={300} alt="image" className="rounded"/>
             </p>
-            <p>Uniformed Security Guards</p>
+            <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Uniformed Security Guards</p>
           </div>
 
-          <div>
+          {/* Escort Services */}
+          <div className=" ring rounded ring-gray-600">
             <p>
-              <Image src='/image/1s.jpg' width={300} height={300} alt="image"/>
+              <Image src='/image/escort.svg' width={300} height={300} alt="image"/>
             </p>
-            <p>Escort Services</p>
+            <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Escort Services</p>
           </div>
 
-          <div>
+          {/* Bulletproof SUV */}
+          <div className=" ring rounded ring-gray-600">
             <p>
-              <Image src='/image/1s.jpg' width={300} height={300} alt="image"/>
+              <Image src='/image/suv.svg' width={300} height={300} alt="image"/>
             </p>
-            <p>Bulletproof SUV</p>
+            <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Bulletproof SUV</p>
           </div>
         </div>
 
+        
         {/* C 3 */}
         <div className="flex items-center justify-center gap-8 py-8">
-          <div>
+
+          {/* Hilux and Buses */}
+          <div className=" ring rounded ring-gray-600">
             <p>
-              <Image src='/image/1s.jpg' width={300} height={300} alt="image"/>
+              <Image src='/image/notfbg.svg' width={300} height={300} alt="image"/>
             </p>
-            <p>Hilux and Buses</p>
+            <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Hilux and Buses</p>
           </div>
 
-          <div>
+          {/* Bouncers */}
+          <div className=" ring rounded ring-gray-600">
             <p>
-              <Image src='/image/1s.jpg' width={300} height={300} alt="image"/>
+              <Image src='/image/bouncers.svg' width={300} height={300} alt="image"/>
             </p>
-            <p>Bouncers </p>
+            <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Bouncers </p>
           </div>
 
-          <div>
+          {/* Due Diligence */}
+          <div className=" ring rounded ring-gray-600">
             <p>
-              <Image src='/image/1s.jpg' width={300} height={300} alt="image"/>
+              <Image src='/image/dd.svg' width={300} height={300} alt="image"/>
             </p>
-            <p>Due Diligence</p>
+            <p className="text-center font-bold text-lg py-3 bg-gradient-to-r from-slate-900 to-rose-700 bg-clip-text text-transparent">Due Diligence</p>
           </div>
+        </div>
+
+        <div className="flex items-center w-full justify-center mx-auto pb-12">
+          <button className='bg-black text-white font-bold p-4 hvr-float-shadow w-fit cursor-pointer rounded-md hover:rounded-md font-montserrat'>Contact Us</button>
         </div>
       </section>
 
@@ -255,7 +287,7 @@ const Hero3 = () => {
           <div>
             <Image src='/image/industry.svg' width={100} height={100} alt="image"/>
           </div>
-          <div>
+          <div className=" text-center">
             <p>Industry &</p>
             <p className="pb-3">Manufacturing</p>
 
@@ -282,7 +314,7 @@ const Hero3 = () => {
           <div>
             <Image src='/image/airplane.svg' width={100} height={100} alt="image"/>
           </div>
-          <div>
+          <div className=" text-center">
             <p>Aviation</p>
             <p className="pb-3">Security</p>
 
@@ -308,7 +340,7 @@ const Hero3 = () => {
           <div>
             <Image src='/image/office.svg' width={100} height={100} alt="image"/>
           </div>
-          <div>
+          <div className=" text-center">
             <p>Offices & </p>
             <p className="pb-3">Infrastructure</p>
 
@@ -351,9 +383,19 @@ const Hero3 = () => {
         
         {/* Div B / Image div  */}
         <div className="py-12 flex items-center">
-          <div>
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+           }}
+
+           transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: 'easeInOut'
+           }}>
+
             <Image src='/image/lock.png' width={500} height={500} alt="image"/>
-          </div>
+          </motion.div>
 
           {/* Swiper */}
           <div className='w-fit py-8 shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)] bg-blue-200/60 palncolor md:px-[3rem] flex flex-col  pt-5 rounded-xl ml-auto'>
@@ -616,12 +658,76 @@ const Hero3 = () => {
         </div>
 
         {/* The Contact Form */}
-        <div className="flex justify-between md:px-[4rem]">
+        <div className="flex gap-10 md:px-[4rem] py-12">
 
-          <div>Video</div>
-
-          <div>Form</div>
+          <div className='shadow-[4.0px_8.0px_8.0px_rgba(0,0,0,0.38)]  h-fit flex items-center justify-center overflow-hidden'>
+            <YouTube videoId='XWOydAzTy3I' opts={opts} className='rounded-lg shadow-lg '/>
+          </div>
           
+          {/* form */}
+          <div className="ml-auto rounded for " >
+            <form className=' py-6 px-20 text-black form  border-2 space-y-2' >
+              {/* Name */}
+              <div className="flex flex-col gap-1">
+                <label className="font-semibold">Your Name</label>
+                <input type="text"
+                  placeholder="Your name*"
+                  required
+                  className="border-black border-2 rounded px-4 py-1 text-gray-700"
+                />
+              </div>
+
+              {/* Email */}
+              <div className="flex flex-col gap-1">
+                <label className="font-semibold">Your Email</label>
+                <input 
+                  type="email"
+                  placeholder="Your email address*"
+                  required
+                  className='border-black border-2 rounded px-4 py-1 text-gray-700'
+                />
+              </div>
+
+              {/* Phone Number */}
+              {/* <div className="flex flex-col gap-1">
+                <label>Phone number</label>
+                <input 
+                  type="number"
+                  placeholder="Your phone number"
+                  className="border-black border-2 rounded"
+                />
+              </div> */}
+
+              {/* Services Provided */}
+              <div className="flex flex-col gap-1">
+                <label className="font-semibold">Servives Provided</label>
+                <select name="" id="" className="border-2 rounded text-gray-600 px-4 py-1 font-semibold">
+                  {/* <option value="">Select one</option> */}
+                  <option value="" className="">Uniformed Security Guards</option>
+                  <option value="" className="">Escort Services</option>
+                  <option value="" className="">Bulletproof SUV</option>
+                  <option value="" className="">Hilux and Buses</option>
+                  <option value="" className="">Bouncers</option>
+                  <option value="" className="">Due Diligence</option>
+                </select>
+              </div>
+
+              {/* Message */}
+              <div className="flex flex-col gap-1">
+                <label className="font-semibold">Message</label>
+                <textarea
+                  typeof="text"
+                  placeholder="Enter message*"
+                  required
+                  className="border-black border-2 rounded text-gray-700 px-4 py-1 font-semibold"/>
+              </div>
+
+              <div className="w-full items-center text-center mt-4 bg-blue-700/30 hover:bg-red-300 coursor-pointer py-3 rounded cursor-pointer">
+                <button className="font-bold">Submit</button>
+              </div>
+            </form>
+          </div>
+
         </div>
 
 
